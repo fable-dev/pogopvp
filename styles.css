@@ -9,16 +9,16 @@
 
 /* Global styles */
 :root {
-  --bg-color: #050816;
-  --card-bg: #0f172a;
-  --accent: #38bdf8;
-  --accent-soft: rgba(56, 189, 248, 0.15);
-  --text-main: #e5e7eb;
-  --text-muted: #9ca3af;
-  --border-subtle: #1f2937;
-  --danger: #f97373;
-  --success: #34d399;
-  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.55);
+  --bg-color: #000;
+  --card-bg: #111;
+  --accent: #fff; /* pure white accent */
+  --accent-soft: rgba(255, 255, 255, 0.08);
+  --text-main: #f1f1f1;
+  --text-muted: #aaa;
+  --border-subtle: #222;
+  --danger: #f87171;
+  --success: #86efac;
+  --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.75);
   --radius-card: 18px;
   --radius-pill: 999px;
 }
@@ -29,9 +29,8 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  background: radial-gradient(circle at top, #111827, #020617 55%, #000000);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #0a0a0a, #000 65%);
   color: var(--text-main);
   line-height: 1.5;
 }
@@ -46,16 +45,9 @@ body {
 
 /* Header */
 .site-header {
-  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-  background: linear-gradient(
-    to bottom,
-    rgba(15, 23, 42, 0.9),
-    rgba(15, 23, 42, 0.4)
-  );
-  backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  z-index: 20;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(to bottom, #111, #0a0a0a);
+  backdrop-filter: blur(8px);
 }
 
 .site-header h1 {
@@ -72,10 +64,7 @@ body {
 
 /* Cards */
 .card {
-  margin-top: 1.5rem;
-  padding: 1.4rem 1.25rem;
-  border-radius: var(--radius-card);
-  background: radial-gradient(circle at top left, #111827, #020617 55%);
+  background: linear-gradient(to bottom right, #111, #0a0a0a);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-soft);
 }
@@ -149,35 +138,17 @@ select:focus {
 
 /* Buttons */
 .primary-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.7rem 1.2rem;
-  border-radius: var(--radius-pill);
-  border: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  background: linear-gradient(
-    to right,
-    #38bdf8,
-    #6366f1
-  );
-  color: #0b1120;
-  box-shadow: 0 12px 25px rgba(56, 189, 248, 0.4);
-  transition: transform 0.1s ease, box-shadow 0.1s ease,
-    filter 0.15s ease;
+  background: linear-gradient(to right, #333, #555);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .primary-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 16px 35px rgba(56, 189, 248, 0.55);
-  filter: brightness(1.03);
+  background: linear-gradient(to right, #444, #666);
 }
 
 .primary-button:active {
-  transform: translateY(0);
-  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
+  background: #222;
 }
 
 /* Results styles */
@@ -224,7 +195,19 @@ select:focus {
 }
 
 .badge--good {
-  border-color: rgba(52, 211, 153, 0.7);
-  background: rgba(16, 185, 129, 0.1);
-  color: #a7f3d0
+  border-color: #999;
+  background: #222;
+  color: #fff;
+}
 
+.badge--warn {
+  border-color: #666;
+  background: #222;
+  color: #ccc;
+}
+
+.badge--danger {
+  border-color: #900;
+  background: #200;
+  color: #f88;
+}
