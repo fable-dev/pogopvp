@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokémon GO PvP & IV Helper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Pokémon GO PvP & IV Helper</h1>
+      <p class="subtitle">
+        Quick insights for IVs & PvP performance – fast, simple, mobile-friendly.
+      </p>
+    </div>
+  </header>
 
+  <main class="container">
+    <!-- Hero Tool Section -->
+    <section class="card">
+      <h2>PvP IV & Appraisal Companion (MVP)</h2>
+      <p class="section-description">
+        Start by selecting a Pokémon, entering its CP, and choosing a league.
+        We’ll show you basic PvP info. In this first version, the data is
+        simplified, and we’ll enhance accuracy in later steps.
+      </p>
+
+      <form id="pvp-form" class="form-grid">
+        <!-- Pokémon Selector -->
+        <div class="form-group">
+          <label for="pokemon-select">Pokémon</label>
+          <select id="pokemon-select" required>
+            <option value="">Select a Pokémon</option>
+            <!-- We’ll expand this list later -->
+            <option value="azumarill">Azumarill</option>
+            <option value="medicham">Medicham</option>
+            <option value="lanturn">Lanturn</option>
+          </select>
+        </div>
+
+        <!-- CP Input -->
+        <div class="form-group">
+          <label for="cp-input">CP</label>
+          <input
+            type="number"
+            id="cp-input"
+            min="10"
+            max="5000"
+            placeholder="e.g., 1495"
+            required
+          />
+        </div>
+
+        <!-- League Selector -->
+        <div class="form-group">
+          <label for="league-select">League</label>
+          <select id="league-select" required>
+            <option value="great">Great League (≤ 1500 CP)</option>
+            <option value="ultra">Ultra League (≤ 2500 CP)</option>
+            <option value="master">Master League (no CP cap)</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group form-group--full">
+          <button type="submit" class="primary-button">
+            Analyze PvP Potential
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results-card" class="card card--results hidden">
+      <h2>Analysis Result</h2>
+      <div id="results-content">
+        <!-- Populated by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="card">
+      <h2>How This Tool Will Evolve</h2>
+      <ul class="feature-list">
+        <li>More Pokémon and accurate PvP rank data per league.</li>
+        <li>Move recommendations and matchup highlights.</li>
+        <li>Search string hints for in-game filtering.</li>
+        <li>Event-specific and meta-relevant suggestions.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Fan-made tool for Pokémon GO. Not affiliated with Niantic or The Pokémon Company.
+      </p>
+      <p>
+        Built with GitHub Pages.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
